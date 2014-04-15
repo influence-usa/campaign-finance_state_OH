@@ -3,6 +3,7 @@
 import json
 import unicodecsv
 
+#SEE LATIN1 BELOW! Change this depending on the data
 input_file = unicodecsv.DictReader(open("/home/aaron/pycon/ohio_down/test/All_CAN.csv"), encoding='latin1')
 
 lst = []

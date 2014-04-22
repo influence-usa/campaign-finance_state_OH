@@ -10,13 +10,14 @@ class OHIO(object):
         self.ftp.cwd("/free")
         self.filenames = []
         self.ftp.retrlines('NLST', self.filenames.append)
+
     def __del__(self):
         self.ftp.close()
         print "OHIO ftp closed"
 
     def print_ftp(self,filter=None):
-        for filename in self.list_ftp(filter):
-            print filename
+        for files in self.list_ftp(filter):
+            print files[0] + " - FileSize:" + str(files[1])
 
     def download_ftp(self,filter=None):
         for filename in self.list_ftp(filter):
@@ -29,7 +30,7 @@ class OHIO(object):
         regex = re.compile(str)
         for filename in self.filenames:
             if re.match(regex, filename.upper()):
-                yield filename  
+                yield filename,self.ftp.size(filename)
 
 
 

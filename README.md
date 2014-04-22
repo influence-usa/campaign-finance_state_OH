@@ -5,15 +5,21 @@ To Use
 
 python run.py -p<print list>|-d<download> & optional_Filter_String
 
-example print:
-python run.py -p "2009" 
-Will print all the names and sizes of all files with "2009" in the name.
+example print:<br>
 
-example download:
-python run.py -d "2009" 
-Will download all files with "2009" in the name.
+python run.py -p "2009" <br>
 
-I suggest using the -p(print) flag first to see what is available.
+Will print all the names and sizes of all files with "2009" in the name.<br>
+
+
+example download:<br>
+python run.py -d "2009" <br>
+
+Will download all files with "2009" in the name.<br>
+
+
+I suggest using the -p(print) flag first to see what is available.<br>
+
 
 Campaign finance in the Buckeye state
 

@@ -1,6 +1,6 @@
 
-download_dir =  '/path/aaron/to/download/directory'
+download_dir =  '/path/to/download/directory'
 
-data_dir =  '/path/aaron/to/data/directory'
+data_dir =  '/path/to/data/directory'
 
 

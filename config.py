@@ -1,5 +1,6 @@
 
-download_dir =  'Path/toi/download/directory'
-data_directory = 'Path/toi/data/directory' 
+download_dir =  '/path/aaron/to/download/directory'
+
+data_dir =  '/path/aaron/to/data/directory'
 
 

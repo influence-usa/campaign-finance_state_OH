@@ -37,11 +37,11 @@ Installation:
 1. clone this repository<br>
 2. check the config.py file<br>
 3. create 3 directories<br>
-    *. one for EXE downloads<br>
-    *. one for uzipped EXE files in csv files (I make this a subdirectory of 1-above)<br>
-    *. one to house the json records that are broken out of the unzipped files(2 - above)<br>
+    1. one for EXE downloads<br>
+    2. one for uzipped EXE files in csv files (I make this a subdirectory of 1-above)<br>
+    3. one to house the json records that are broken out of the unzipped files(2 - above)<br>
 
-2. add directory paths to the config.py file<br>
+4. add directory paths to the config.py file<br>
 
 
 

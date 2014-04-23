@@ -10,7 +10,8 @@ python run.py -p<print list>|-d<download>|-t<transform> & optional_Filter_String
 
 example print:<br>
 ---------------
-python run.py -p "2009" 
+python run.py -p "2009".
+
 Will print all the names and sizes of all files with "2009" in the name.
 
 

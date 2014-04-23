@@ -8,17 +8,17 @@ To Use
 
 python run.py -p<print list>|-d<download>|-t<transform> & optional_Filter_String
 
-example print:<br>
+example print:
 ---------------
 python run.py -p "2009".
 
 Will print all the names and sizes of all files with "2009" in the name.
 
 
-example download:<br>
+example download:
 ----------------
-python run.py -d  <br>
-What it does:downloads all files with an EXE extension from the OHIO site. Then those files are unzipped into csv files. Then the records from the csv files are distributed(json) into Year and Quarter folders that are created in your file system , if they don't currently exist.<br>
+python run.py -d  
+What it does:downloads all files with an EXE extension from the OHIO site. Then those files are unzipped into csv files. Then the records from the csv files are distributed(json) into Year and Quarter folders that are created in your file system , if they don't currently exist.
 
 >For testing you should use a Filter_string when downloading
 >example: python run.py -d "2009"
@@ -27,7 +27,13 @@ Use the -p(print) flag first to scan the file names and sizes
 
 If you just want to distribute the json files from the csv download, for instance , when testing then use
 python run.py -t Filter_String 
-.<br>
+.
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
 
 reqiurements:
 1.python 2.7*

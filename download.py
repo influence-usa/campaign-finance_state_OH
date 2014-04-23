@@ -83,7 +83,6 @@ class OHIO(object):
                 else:
                     Q = 'PARTYEXPEND_DATE_NOT_FOUND' 
 
-                print Q
                 if not os.path.exists(self.data_dir + "/" + d['RPT_YEAR']):
                     os.makedirs(self.data_dir + "/" + d['RPT_YEAR'])
                     for i in range(1, 5):

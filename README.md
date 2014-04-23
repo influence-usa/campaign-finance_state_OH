@@ -25,28 +25,11 @@ What it does:downloads all files with an EXE extension from the OHIO site. Then 
 
 Use the -p(print) flag first to scan the file names and sizes
 
-If you just want to distribute the json files from the csv download, for instance , when testing then use
-python run.py -t Filter_String 
-.
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
-
+>If you just want to distribute the json files from the csv download, for instance , when testing then use
+>python run.py -t Filter_String 
 reqiurements:
-1.python 2.7*
+1.python 2.7*.
 2. NOT COMPLETED
-
-Installation:
-1. clone this repository.
-2. check the config.py file.
-3. create 3 directories.
-..* one for EXE downloads.
-..* one for uzipped EXE files in csv files (I make this a subdirectory of 1-above).
-⋅⋅* one to house the json records that are broken out of the unzipped files(2 - above).
-4. add directory paths to the config.py file.
 
 
 

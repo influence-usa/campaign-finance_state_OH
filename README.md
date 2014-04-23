@@ -20,8 +20,8 @@ example download:<br>
 python run.py -d  <br>
 What it does:downloads all files with an EXE extension from the OHIO site. Then those files are unzipped into csv files. Then the records from the csv files are distributed(json) into Year and Quarter folders that are created in your file system , if they don't currently exist.<br>
 
-For testing you should use a Filter_string when downloading
-example: python run.py -d "2009"
+>For testing you should use a Filter_string when downloading
+>example: python run.py -d "2009"
 
 Use the -p(print) flag first to scan the file names and sizes
 
@@ -37,8 +37,8 @@ Installation:
 1. clone this repository.
 2. check the config.py file.
 3. create 3 directories.
-⋅⋅* one for EXE downloads.
-⋅⋅* one for uzipped EXE files in csv files (I make this a subdirectory of 1-above).
+..* one for EXE downloads.
+..* one for uzipped EXE files in csv files (I make this a subdirectory of 1-above).
 ⋅⋅* one to house the json records that are broken out of the unzipped files(2 - above).
 4. add directory paths to the config.py file.
 

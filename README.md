@@ -1,3 +1,6 @@
+I NEED TO LEARN HOW TO EDIT an MD FILE.
+
+
 campaign_finance-state-OH
 =========================
 
@@ -30,14 +33,14 @@ reqiurements:
 2. NOT COMPLETED
 
 Installation:
-1. clone this repository
-2. check the config.py file
-3. create 3 directories
-    a. one for EXE downloads
-    b. one for uzipped EXE files in csv files (I make this a subdirectory of 1-above)
-    c. one to house the json records that are broken out of the unzipped files(2 - above)
+1. clone this repository<br>
+2. check the config.py file<br>
+3. create 3 directories<br>
+    a. one for EXE downloads<br>
+    b. one for uzipped EXE files in csv files (I make this a subdirectory of 1-above)<br>
+    c. one to house the json records that are broken out of the unzipped files(2 - above)<br>
 
-2. add directory paths to the config.py file
+2. add directory paths to the config.py file<br>
 
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys, getopt
-from download import OHIO
+from work import OHIO
 
 def main(argv):
    if len(argv)==1:

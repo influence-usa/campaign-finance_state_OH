@@ -35,7 +35,11 @@ No file is overwritten in this process. If the file already exists then it is le
 TODO
 ----
 <ul>
-<li>Test a full download and adress the inevitable errors.</li>
+<li>add a test option as -t and move the json option to -j</li>
+<li>find which tables are relevant - </li>
+<li>for now - retrict tables to those with a year at the end of its name</li>
+<li>change the file sructure if there are  multiple relevant table schemas so we can distribute json per table type.</li>
+<li>Test a full download and address the inevitable errors.</li>
 <li>Unit tests.</li>
 <li>refactor</li>
 </ul>

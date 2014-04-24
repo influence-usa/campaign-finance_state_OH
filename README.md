@@ -35,6 +35,7 @@ No file is overwritten in this process. If the file already exists then it is le
 TODO
 ----
 <ul>
+<li>delete the unzip option in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
 <li>add a test option as -t and move the json option to -j</li>
 <li>find which tables are relevant - </li>
 <li>for now - retrict tables to those with a year at the end of its name</li>

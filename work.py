@@ -8,7 +8,7 @@ import json
 import unicodecsv
 from datetime import datetime
 #WARNING THIS WILL TAKE A WHILE TO RUN
-class OHIO(object):
+class Ohio(object):
     def __init__(self,filter=''): 
         self.filter =  filter
         self.ftp = FTP("serproxy.sos.state.oh.us") # no pass
@@ -16,7 +16,7 @@ class OHIO(object):
         self.ftp.cwd("/free")
         self.filenames = []
         self.ftp.retrlines('NLST', self.filenames.append)
-        self.zip_dir = config.unzipped_dir
+        self.unzipped_dir = config.unzipped_dir
         self.data_dir = config.data_dir
         self.download_dir = config.download_dir
 
@@ -69,15 +69,20 @@ class OHIO(object):
 
     def extract_json_files(self):
          #SEE LATIN1 BELOW! Change this depending on the data
-        lst = []
+        failures = 0    
+        print  "extracting " + str(sum(1 for x in self.list_ftp())) +  " csv files to json"
         for filename in self.list_ftp():
             filename = filename[0].replace(".EXE",".CSV")
             print  "extracting " +  filename + " to json"
-            input_file = unicodecsv.DictReader(open(config.unzipped_dir + "/" + filename), encoding='latin1')
+            try:
+                input_file = unicodecsv.DictReader(open(config.unzipped_dir + "/" + filename), encoding='latin1')
+            except:
+                print  filename  + " from the ftp site does not exist in your local directories so json extraction is skipped for " + filename + "."
+                input_file = ""
+                failures += 1
+
             for (x, d) in enumerate(input_file):
                 d['id']=x
-                lst.append(d)
-                PE_date = 'NO_DATE' 
                 if  'PARTYEXPEND_DATE' in d:
                     Q = "Q" + str(self.get_quarter(d['PARTYEXPEND_DATE']))
                 else:
@@ -94,3 +99,6 @@ class OHIO(object):
 
                 with open( self.data_dir + "/" + d['RPT_YEAR'] + "/" + Q + "/" +  str(d['id']) + '.json', 'w') as outfile:
                     json.dump(d, outfile)
+
+        print str(sum(1 for x in self.list_ftp())  - failures) + " files extracted."
+        if failures>0:print str(failures) + " expected CSV files could not be found. Try first downloading if you have used the -t option."

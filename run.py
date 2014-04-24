@@ -18,7 +18,6 @@ def main(argv):
    if opts[0][0] == '-d':
        state.get_ftp()
    if opts[0][0] == '-t':
-       state.get_ftp()
        state.extract_json_files()
 
 if __name__ == "__main__":

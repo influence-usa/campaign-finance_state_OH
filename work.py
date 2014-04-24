@@ -73,7 +73,7 @@ class Ohio(object):
         print  "extracting " + str(sum(1 for x in self.list_ftp())) +  " csv files to json"
         for filename in self.list_ftp():
             filename = filename[0].replace(".EXE",".CSV")
-            print  "extracting " +  filename + " to json"
+            #print  "extracting " +  filename + " to json"
             try:
                 input_file = unicodecsv.DictReader(open(config.unzipped_dir + "/" + filename), encoding='latin1')
             except:

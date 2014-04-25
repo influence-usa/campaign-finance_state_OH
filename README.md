@@ -35,6 +35,7 @@ No file is overwritten in this process. If the file already exists then it is le
 TODO
 ----
 <ul>
+<li>pass ftp object to ohio instead of initializing it in the class init. </li>
 <li>delete the unzip option in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
 <li>add a test option as -t and move the json option to -j</li>
 <li>find which tables are relevant - </li>

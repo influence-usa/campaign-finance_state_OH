@@ -46,7 +46,8 @@ TODO
 </ul>
 
 
-
+Example Directory structure created by Ohio download for 2009
+--------------------------------------------------------------
 ├── CAN  
 │   ├── CON  
 │   │   └── 2009  

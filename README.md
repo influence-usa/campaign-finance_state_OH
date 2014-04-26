@@ -35,7 +35,6 @@ No file is overwritten in this process. If the file already exists then it is le
 TODO
 ----
 <ul>
-<li>EXP data has a different date field then CON data - right now only EXP data is reading the date.</li>
 <li>delete the unzip option in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
 <li>add a test option as -t and move the json option to -j</li>
 <li>find which tables are relevant - </li>
@@ -43,60 +42,54 @@ TODO
 <li>change the file sructure if there are  multiple relevant table schemas so we can distribute json per table type.</li>
 <li>Test a full download and address the inevitable errors.</li>
 <li>Unit tests.</li>
-<li>re factor</li>
+<li>refactor</li>
 </ul>
 
 
-Directory Structure After Dowload
---------------------------------
-Your data directory will have folders addded(if they don't currently exist) after downloads. This is an example of 2009
-data only. 
 
 ├── CAN  
 │   ├── CON  
 │   │   └── 2009  
-│   │       ├── PARTYEXPEND_DATE_NOT_FOUND
-│   │       ├── Q1
-│   │       ├── Q2
-│   │       ├── Q3
-│   │       └── Q4
-│   └── EXP
-│       └── 2009
-│           ├── PARTYEXPEND_DATE_NOT_FOUND
-│           ├── Q1
-│           ├── Q2
-│           ├── Q3
-│           └── Q4
-├── PAC
-│   ├── CON
-│   │   └── 2009
-│   │       ├── PARTYEXPEND_DATE_NOT_FOUND
-│   │       ├── Q1
-│   │       ├── Q2
-│   │       ├── Q3
-│   │       └── Q4
-│   └── EXP
-│       └── 2009
-│           ├── PARTYEXPEND_DATE_NOT_FOUND
-│           ├── Q1
-│           ├── Q2
-│           ├── Q3
-│           └── Q4
-└── PAR
-    ├── CON
-    │   └── 2009
-    │       ├── PARTYEXPEND_DATE_NOT_FOUND
-    │       ├── Q1
-    │       ├── Q2
-    │       ├── Q3
-    │       └── Q4
-    └── EXP
-        └── 2009
-            ├── PARTYEXPEND_DATE_NOT_FOUND
-            ├── Q1
-            ├── Q2
-            ├── Q3
-            └── Q4
-
-
+│   │       ├── PARTYEXPEND_DATE_NOT_FOUND  
+│   │       ├── Q1  
+│   │       ├── Q2  
+│   │       ├── Q3  
+│   │       └── Q4  
+│   └── EXP  
+│       └── 2009  
+│           ├── PARTYEXPEND_DATE_NOT_FOUND  
+│           ├── Q1  
+│           ├── Q2  
+│           ├── Q3  
+│           └── Q4  
+├── PAC  
+│   ├── CON  
+│   │   └── 2009  
+│   │       ├── PARTYEXPEND_DATE_NOT_FOUND  
+│   │       ├── Q1  
+│   │       ├── Q2  
+│   │       ├── Q3  
+│   │       └── Q4  
+│   └── EXP  
+│       └── 2009  
+│           ├── PARTYEXPEND_DATE_NOT_FOUND  
+│           ├── Q1  
+│           ├── Q2  
+│           ├── Q3  
+│           └── Q4  
+└── PAR  
+    ├── CON  
+    │   └── 2009  
+    │       ├── PARTYEXPEND_DATE_NOT_FOUND  
+    │       ├── Q1  
+    │       ├── Q2  
+    │       ├── Q3  
+    │       └── Q4  
+    └── EXP  
+        └── 2009  
+            ├── PARTYEXPEND_DATE_NOT_FOUND  
+            ├── Q1  
+            ├── Q2  
+            ├── Q3  
+            └── Q4  
 

@@ -52,9 +52,9 @@ Directory Structure After Dowload
 Your data directory will have folders addded(if they don't currently exist) after downloads. This is an example of 2009
 data only. 
 
-├── CAN
-│   ├── CON
-│   │   └── 2009
+├── CAN  
+│   ├── CON  
+│   │   └── 2009  
 │   │       ├── PARTYEXPEND_DATE_NOT_FOUND
 │   │       ├── Q1
 │   │       ├── Q2

@@ -14,20 +14,33 @@ class Ohio(object):
         self.ftp = FTP("serproxy.sos.state.oh.us") # no pass
         self.ftp.login()
         self.ftp.cwd("/free")
-        self.filenames = []
-        self.ftp.retrlines('NLST', self.filenames.append)
+        self.allfiles = []
+        self.ftp.retrlines('NLST', self.allfiles.append)
+        #I need to find out exactly what fies are needed
+        regex = re.compile('(?=.*(19|20)\d{2})(?=.*(^(?!.*?MSTRKEY)))')
+        self.filenames =  [x for x in self.allfiles if (regex.search(x.upper()) is not None)]
         self.unzipped_dir = config.unzipped_dir
         self.data_dir = config.data_dir
         self.download_dir = config.download_dir
-
     def __del__(self):
         self.ftp.close()
         print "OHIO ftp closed"
+
+    def set_up_directories(self):
+        for d in ["CAN","PAR","PAC"]:
+            if  d not in  [name for name in os.listdir(self.data_dir)]:
+                os.makedirs(self.data_dir  + "/" + d)
+                os.makedirs(self.data_dir  + "/" + d + "/CON" )
+                os.makedirs(self.data_dir  + "/" +  d + "/EXP")
+                                   
+      
+             
     def print_ftp(self):
         for files in self.list_ftp():
             print files[0] + " - FileSize:" + str(files[1])
 
     def download_ftp(self):
+        self.set_up_directories
         for filename in self.list_ftp():
             local_filename = os.path.join( self.download_dir, filename[0])
             if os.path.isfile(local_filename) is True:
@@ -59,8 +72,6 @@ class Ohio(object):
 
     def get_quarter(self,date_str):
         dt = datetime.strptime(date_str, '%m/%d/%Y %H:%M:%S')
-      #  gen = ((i+1,[j, j+1,j+2]) for i,j in enumerate([1, 4, 7,10]))
-      #  print list(gen)
         q_gen = [ [i+1,x] for i,j in enumerate([1, 4, 7,10] )for x in range(j,j+3)] 
         for x in q_gen:
             if dt.date().month == x[1]:
@@ -88,16 +99,16 @@ class Ohio(object):
                 else:
                     Q = 'PARTYEXPEND_DATE_NOT_FOUND' 
 
-                if not os.path.exists(self.data_dir + "/" + d['RPT_YEAR']):
-                    os.makedirs(self.data_dir + "/" + d['RPT_YEAR'])
+                data_base_dir = self.data_dir + "/" + filename[4:7] + "/" + filename[8:11] + "/"
+
+                if not os.path.exists(data_base_dir + d['RPT_YEAR']):
+                    os.makedirs(data_base_dir + d['RPT_YEAR'])
                     for i in range(1, 5):
-                        if not os.path.exists(self.data_dir + "/" + d['RPT_YEAR'] + "/Q" + str(i)):
-                            os.makedirs(self.data_dir + "/" + d['RPT_YEAR'] + "/Q" + str(i))
+                        if not os.path.exists(data_base_dir + d['RPT_YEAR'] + "/Q" + str(i)):os.makedirs(data_base_dir + d['RPT_YEAR'] + "/Q" + str(i))
 
-                if not os.path.exists(self.data_dir + "/" + d['RPT_YEAR'] + "/PARTYEXPEND_DATE_NOT_FOUND" ):
-                    os.makedirs(self.data_dir + "/" + d['RPT_YEAR'] + "/PARTYEXPEND_DATE_NOT_FOUND" )
+                if not os.path.exists(data_base_dir + d['RPT_YEAR'] + "/PARTYEXPEND_DATE_NOT_FOUND" ):os.makedirs(data_base_dir + d['RPT_YEAR'] + "/PARTYEXPEND_DATE_NOT_FOUND" )
 
-                with open( self.data_dir + "/" + d['RPT_YEAR'] + "/" + Q + "/" +  str(d['id']) + '.json', 'w') as outfile:
+                with open( data_base_dir + d['RPT_YEAR'] + "/" + Q + "/" +  str(d['id']) + '.json', 'w') as outfile:
                     json.dump(d, outfile)
 
         print str(sum(1 for x in self.list_ftp())  - failures) + " files extracted."

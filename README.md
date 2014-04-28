@@ -64,13 +64,13 @@ Example Directory structure created by Ohio download for 2009
 │   │       ├── Q2  
 │   │       ├── Q3  
 │   │       └── Q4  
-│   └── EXP   
-│       └── 2009  
-│           ├── PARTYEXPEND_DATE_NOT_FOUND  
-│           ├── Q1  
-│           ├── Q2  
-│           ├── Q3  
-│           └── Q4  
+│   ├── EXP   
+│   │   └── 2009  
+│   │       ├── PARTYEXPEND_DATE_NOT_FOUND  
+│   │       ├── Q1  
+│   │       ├── Q2  
+│   │       ├── Q3  
+│   │       └── Q4  
 ├── PAC  
 │   ├── CON  
 │   │   └── 2009  

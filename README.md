@@ -5,8 +5,8 @@ Issues
 There are 3 types of files - CAN, PAR and PAC with to sub-types CON and EXP for each.
 I am in the process of dividing these files associated json files into their  correct directory. The directory structure is
 at the end of the README.
-I'll try and have it all set to go in a few days. 
-UPDATE:
+I'll try and have it all set to go in a few days.  
+UPDATE:  
 I've divided the filesystem to reflect the diffferent table types. Also there is a bad_date field provided in every
 Year folder. The bad dates are mostly(if not all) empty date fields. note:the year is extracted from the file name.
 Installation

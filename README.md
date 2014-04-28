@@ -19,7 +19,7 @@ You must edit the config.py file and change the 3 paths:<br>
 
 To Use 
 ------
-<blockquote>python run.py -p<print list>|-d<download>|-t<transform> & optional_Filter_String</blockquote>
+<blockquote>python run.py -p<print>|-d<download>|-t<test>|-r<report> & optional_Filter_String</blockquote>
 
 Example print:
 <blockquote><b>python run.py -p</b> <i> - prints all ftp files names and sizes.</i></blockquote>
@@ -35,19 +35,21 @@ Downloads only files with "2009" in the name.</i></blockquote>
 
 Notes
 -----
-You should use the -p option first before downloading if this is your first time. If you use the -d option with no <em>Optional_filter_string</em> then all the ftp files wiill be downloaded and transformed. 
-If you just want to do the csv to json tranformation then use the -t option. 
-
+You should use the -p option first before downloading if this is your first time. If you use the -d option with no <em>Optional_filter_string</em> then all the ftp files wiill be downloaded and transformed.   
+You can run the future tests for this project with the <b>-t</b> flag (and no optional_filter_string) ex.  
+<blockquote> python run.py -t </blockquote>  
+You can run a report with the <b>-r</b> flag . The report breaks down the counts of files in each lowest level subdirectory.  Because this process takes
+a while you should <b>USE THE </b> optional_Filter_string ex.  
+<blockquote> python run.py -r 2009 </blockquote>  
 No file is overwritten in this process. If the file already exists then it is left alone. In order to do a fresh download and distribute of json files you must first delete all content from the 3 pathways found in your config.py.
 
 TODO
 ----
 <ul>
+<li>Figure out how to do file system graphs in MD(for this readme)</li>
 <li>delete the unzip path in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
-<li>add a test option as -t and move the json option to -j</li>
-<li>find which tables are relevant - </li>
-<li>for now - retrict tables to those with a year at the end of its name</li>
-<li>change the file sructure if there are  multiple relevant table schemas so we can distribute json per table type.</li>
+<li>find out which files are relevant - 
+for now - retrict tables to those with a year at the end of its name</li>
 <li>Test a full download and address the inevitable errors.</li>
 <li>Unit tests.</li>
 <li>refactor</li>

@@ -6,7 +6,9 @@ There are 3 types of files - CAN, PAR and PAC with to sub-types CON and EXP for 
 I am in the process of dividing these files associated json files into their  correct directory. The directory structure is
 at the end of the README.
 I'll try and have it all set to go in a few days. 
-
+UPDATE:
+I've divided the filesystem to reflect the diffferent table types. Also there is a bad_date field provided in every
+Year folder. The bad dates are mostly(if not all) empty date fields. note:the year is extracted from the file name.
 Installation
 ------------
 You must edit the config.py file and change the 3 paths:<br>
@@ -41,7 +43,7 @@ No file is overwritten in this process. If the file already exists then it is le
 TODO
 ----
 <ul>
-<li>delete the unzip option in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
+<li>delete the unzip path in the config file and create it as a subdirectory of download_dir.Change code accordingly.</li>
 <li>add a test option as -t and move the json option to -j</li>
 <li>find which tables are relevant - </li>
 <li>for now - retrict tables to those with a year at the end of its name</li>
@@ -62,7 +64,7 @@ Example Directory structure created by Ohio download for 2009
 │   │       ├── Q2  
 │   │       ├── Q3  
 │   │       └── Q4  
-│   └── EXP  
+│   └── EXP   
 │       └── 2009  
 │           ├── PARTYEXPEND_DATE_NOT_FOUND  
 │           ├── Q1  

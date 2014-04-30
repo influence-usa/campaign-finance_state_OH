@@ -11,10 +11,18 @@ I've divided the filesystem to reflect the diffferent table types. Also there is
 Year folder. The bad dates are mostly(if not all) empty date fields. note:the year is extracted from the file name.
 Installation
 ------------
+
+<h3>Requirements<h3>
+ unicodecsv is required to run this program.
+<blockquote> pip install unicodecsv </blockquote>
+
+<h3> Edit config File<h3>
 You must edit the config.py file and change the 3 paths:<br>
 <b>download_dir</b> is the directory that the unzipped EXE files will be downloaded to.<br>
 <b>unzipped_dir</b> is the directory that the downloaded EXE files will be extracted to. I make this directory a subdirectory of the <em>download_dir</em> - see above.<br>
-<b>data_dir</b> is the directory that the final json files will be distributed to. 
+<b>data_dir</b> is the directory that the final json files will be distributed to.  
+
+
 
 
 To Use 

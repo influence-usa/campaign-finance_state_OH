@@ -42,16 +42,16 @@ Because this process takes a while you should <b>USE THE </b> optional_Filter_st
 No file is overwritten in this process. If the file already exists then it is left alone. 
 In order to do a fresh download and distribute of json files you must first delete all content from the 3 pathways found in your config.py.
 
-<h4>Directory Structure </h4>
+<h5>Directory Structure </h5>
 If you do not override the config.py default directories the the directory structure(shown at the end of the README)
 will be created within the campaign-finance_state_OH directory.
 If you do override the config.py variables then remember to change the USE_ALTERNATE variable to True.
 
-<h4>Bad Dates</h4>
+<h5>Bad Dates</h5>
 There is a bad_date field provided in every Year folder.
 The bad dates are mostly(if not all) empty date fields. note:the year is extracted from the file name.
 
-<h4>Files That Are Used</h4>
+<h5>Files That Are Used</h5>
 Currently there are files excluded from this process. Specifically files with 'MSTRKEY' in their name.
 This is the regex string used to filet the ftp files:('(?=ALL.*(19|20)\d{2})(?=.*(^(?!.*?MSTRKEY)))')
 
